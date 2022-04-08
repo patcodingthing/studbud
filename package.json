@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/patcodingthing/studbud/issues"
   },
-  "homepage": "https://github.com/patcodingthing/studbud#readme"
+  "homepage": "https://github.com/patcodingthing/studbud#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
