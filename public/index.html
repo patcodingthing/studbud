@@ -14,19 +14,86 @@
       
       <header>
         <div class = "studbud"><h1>StudBud</h1></div>
+
+        <div class = "stopwatch">
+          <button id = "start">Start</button>
+          <button id = "stop">Stop</button>
+          <button id = "reset">Reset</button>
+        </div>
       </header>
     
       <div class = "content">
 
-        <div class = "kanban">
+        <div id = "kanban" class = "kanban">
         
-          <div class = "kanban-column-wrapper"></div>
-          <div class = "kanban-add"></div>
+            <div id = "kanban-column-wrapper" class = "kanban-column-wrapper"></div>
+            
+            <button id ="colAdd" class = "kanban-add">
+              <h1>+</h1>
+              <br>
+              <h2>Add New Column</h2>
+            </button>        
 
         </div>
       
-          <div class = "reading-list"></div>
-          <div class = "task-list"></div>
+          <div class = "reading-list">
+            <form id="readform">
+              <label for="read">Title:</label>
+              <input type="text" name="read" id="readInput">
+        
+              <br>
+            <!--Link input -->
+              <label for="link">Link</label>
+              <input type="text" name="link" id="linkInput">
+              <br>
+            
+              <button type="submit">Submit</button>
+            </form>
+            <ul id="tasklist">
+            </ul>
+            <script src="solution.js"></script>
+            <!-- Swap the scripts to see the working solution -->
+            <!-- <script src="solution.js"></script> -->
+          </div>
+          <div class = "task-list">
+            <form id="taskform">
+              <label for="task">Task:</label>
+              <input type="text" name="task" id="taskInput">
+        
+              <br>
+            <!-- Date input -->
+              <label for="dueDate">Due Date: </label>
+              <input type="date" name="dueDate" id="dueDateInput">
+              <br>
+            <!-- Time input -->
+            <label for="completionTime">Completion Time: </label>
+              <input type="time" name="completionTime" id="completionTimeInput">
+        
+              <br>
+        
+            <label for="estimatedTime">Estimated completion time (in mins):</label>
+            <input type="number" name="estimatedTime" id="estimatedTimeInput">
+            <!-- Priority -->
+            <br>
+        
+            <label for="priority">Task Priority:</label>
+            <select name="prority" id="priorityInput">
+              <option value="">Select one</option>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+        
+            <br>
+        
+              <button type="submit">Submit</button>
+            </form>
+            <ul id="tasklist">
+            </ul>
+            <script src="solution.js"></script>
+            <!-- Swap the scripts to see the working solution -->
+            <!-- <script src="solution.js"></script> -->
+          </div>
       
       </div>
     </div>

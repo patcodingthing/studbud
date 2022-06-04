@@ -9,6 +9,8 @@ h1, h2, h3, p {
   margin: 0;
 }
 
+
+/*Main container for CSS grid*/
 .main-container{
   display: grid;
   height: 150vh;
@@ -21,6 +23,7 @@ h1, h2, h3, p {
     "header content"
 }
 
+/*Elements CSS*/
 header {
   background-color: blue;
   grid-area: header;
@@ -38,11 +41,7 @@ header {
   grid-area: studbud;
 }
 
-nav {
-  background-color: teal;
-  grid-area: nav;
-}
-
+/* Unecessary code for nav links, keeping in case is needed
 a {
   display: block;
   color: black;
@@ -61,9 +60,10 @@ a:hover:not(.active) {
   background-color: #555;
   color: white;
 }
+*/
 
 .content {
-  background-color: cyan;
+  background-color: white;
   grid-area: content;
 
   display: grid;
@@ -78,38 +78,124 @@ a:hover:not(.active) {
   background-color: white;
   display: grid;
   grid-area: kanban;
-  grid-template-columns: 1fr 0.15fr;
+  grid-template-columns: 1fr 0.1fr;
   grid-template-rows: 1fr;
   grid-template-areas: 
     "kanban-column-wrapper kanban-add";
 }
 
 .kanban-column-wrapper{
-  background-color: purple;
+  background-color: white;
   grid-area: kanban-column-wrapper;
+  padding: 10px;
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-rows: 1fr;
+  gap: 10px;
+}
+
+.kanban-column{
+  background-color: gray;
+  height: 1fr;
+  border-radius: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 250px));
+  grid-template-rows: 1fr;
+  gap: 10px;
+  padding: 0;
+
 }
 
 .kanban-add{
   background-color: red;
   grid-area: kanban-add;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: none;
+  float: right;
+}
+
+.kanban-add:hover{
+  background-color: rgb(141, 0, 0);
+  cursor: pointer;
 }
 
 .reading-list{
   background-color: green;
-  grid-area: reading-list
+  grid-area: reading-list;
+  margin: 10px;
+  padding: 10px;
+  border-color: black;
+  border-style: solid;
+  border-width: 5px;
 }
 
 .task-list{
   background-color: orange;
   grid-area: task-list;
+  margin: 10px;
+  padding: 10px;
+  border-color: black;
+  border-style: solid;
+  border-width: 5px;
 }
 
-@media only screen and (max-width: 900px){
+
+
+/*Responsive CSS for Mobile/thin desktop windows*/
+
+@media only screen and (max-width: 1000px){
   .main-container {
     grid-template-columns: 1fr;
     grid-template-rows: 0.1fr 1fr;
     grid-template-areas:
       "header"
       "content";
+  }
+
+  .content {
+    background-color: cyan;
+    grid-area: content;
+  
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+      "kanban" 
+      "task-list"
+      "reading-list";
+      
+  }
+
+  .kanban{
+    background-color: white;
+    display: grid;
+    grid-area: kanban;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.1fr;
+    grid-template-areas: 
+    "kanban-column-wrapper" 
+    "kanban-add";
+  }
+
+  .kanban-column-wrapper{
+    background-color: white;
+    grid-area: kanban-column-wrapper;
+    padding: 10px;
+    display: grid; 
+    grid-template-rows: repeat(auto-fit, minmax(50px, 1fr));
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  header {
+    background-color: blue;
+    grid-area: header;
+    
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 0.1fr 1fr;
+    grid-template-areas: 
+      "studbud ."; 
   }
 }
