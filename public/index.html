@@ -5,7 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Studbud</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" >
+    <link rel="icon" href="favicon.ico">
+
   </head>
 
   <body>
@@ -17,18 +19,28 @@
         
         <!--Stopwatch HTML-->
         <div class = "stopwatch">
-          <div id = "time" class = "time">00:00:00</div>
+          <div id = "time" class = "time"><h3>00:00:00</h3></div>
           <button id = "start">Start</button>
           <button id = "stop">Stop</button>
           <button id = "reset">Reset</button>
         </div>
+        
+        <div class = "spotify-container"> <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4mn2kNTqiGLwaUR8JdhJ1l?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe></div>
+        
       </header>
       
       <!--Wrapper for grid layout of content: kanban board, reading/task lists-->
       <div class = "content">
+        
+       
 
         <!--kanban board wrapper-->
         <div id = "kanban" class = "kanban">
+
+            <div class = "kanban-top-container">
+              <div class = "kanban-top-title"><h1>My Kanban Board</h1></div>
+              
+            </div>
 
             <!--Wrapper for Kanban board categories/columns-->
             <div id = "kanban-column-wrapper" class = "kanban-column-wrapper"></div>
@@ -44,6 +56,7 @@
       
         <!--Reading List HTML-->
         <div class = "reading-list">
+          <h1>Reading List</h1>
           <form id="readform">
             <label for="read">Title:</label>
             <input type="text" name="read" id="title">
@@ -63,6 +76,7 @@
          
         <!--Task List HTML-->
         <div class = "task-list">
+          <h1>Task List</h1>
           <form id="taskform">
             <label for="task">Task:</label>
             <input type="text" name="task" id="taskInput">

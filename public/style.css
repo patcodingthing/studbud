@@ -1,71 +1,67 @@
 html, body {
   height: 100%;
   width: 100%;
+  margin: 0px;
 }
 
 h1, h2, h3, p {
-  font-family: calibri;
+  font-family: helvetica;
   padding: 0;
   margin: 0;
 }
 
 
-/*Main container for CSS grid*/
+/*-------------------Main container for CSS grid-------------------*/
 .main-container{
   display: grid;
   height: 150vh;
   width: 100vw;
 
-  grid-template-columns: 0.1fr 1fr;
-  grid-template-rows: 0.1fr 1fr;
+  grid-template-columns: minmax(150px, 0.1fr) 1fr;
+  grid-template-rows: 1fr;
   grid-template-areas: 
     "header content"
     "header content"
 }
 
-/*Elements CSS*/
+
+
+
+/*---------------Elements CSS-----------------*/
+
+
+
+
 header {
   background-color: blue;
   grid-area: header;
+  border-radius: 10px;
   
   display: grid;
-  grid-template-rows: 0.1fr 1fr;
+  grid-template-rows: 0.1fr 0.1fr 0.1fr 1fr;
   grid-template-columns: 1fr;
   grid-template-areas: 
     "studbud"
-    "." 
+    "stopwatch"
+    "spotify-container"
+    "."
 }
 
 .studbud{
   background-color: navy;
   grid-area: studbud;
+  border-radius: 10px;
+  margin: 0;
 }
 
-/* Unecessary code for nav links, keeping in case is needed
-a {
-  display: block;
-  color: black;
-  padding: 16px;
-  text-decoration: none;
-  font-family: calibri;
-  margin: 10px;
+.spotify-container{
+  grid-area: spotify;
 }
-
-a.active {
-  background-color: #04AA6D;
-  color: white;
-}
-
-a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
-*/
 
 .content {
-  background-color: white;
+  background-color: lightgrey;
   grid-area: content;
-
+  margin: 0px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -73,15 +69,27 @@ a:hover:not(.active) {
     "kanban kanban" 
     "reading-list task-list";
 }
+.kanban-top-container{
+  grid-area: "kanban-top-container";
+  background-color: white;
+  font-family: helvetica;
+  margin: 10px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "kanban-top title . spotify-container"
+}
 
 .kanban{
   background-color: white;
   display: grid;
   grid-area: kanban;
   grid-template-columns: 1fr 0.1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: 0.1fr 1fr;
   grid-template-areas: 
-    "kanban-column-wrapper kanban-add";
+  "kanban-top-container ."
+  "kanban-column-wrapper kanban-add";
 }
 
 .kanban-column-wrapper{
@@ -95,7 +103,7 @@ a:hover:not(.active) {
 }
 
 .kanban-column{
-  background-color: gray;
+  background-color: lightgray;
   height: 1fr;
   border-radius: 10px;
   grid-template-columns: repeat(auto-fit, minmax(150px, 250px));
@@ -109,15 +117,15 @@ a:hover:not(.active) {
   resize: none;
   max-width: 90%;
   font-size: 25px;
-  background-color: gray;
+  background-color: lightgrey;
   border: none;
   margin: 5px;
   border-radius: 10px;
-  font-family: calibri;
+  font-family: helvetica;
 }
 
 .new-column-title{
-  font-family: calibri;
+  font-family: helvetica;
 }
 
 .kanban-add{
@@ -154,6 +162,7 @@ a:hover:not(.active) {
 }
 
 .stopwatch{
+  grid-area: stopwatch;
 
 }
 
@@ -166,6 +175,7 @@ a:hover:not(.active) {
   border-style: solid;
   border-width: 5px;
   border-radius: 10px;
+  font-family: helvetica;
 }
 
 .task-list{
@@ -177,6 +187,7 @@ a:hover:not(.active) {
   border-style: solid;
   border-width: 5px;
   border-radius: 10px;
+  font-family: helvetica;
 }
 
 
@@ -193,7 +204,7 @@ a:hover:not(.active) {
   }
 
   .content {
-    background-color: cyan;
+    background-color: lightgrey;
     grid-area: content;
   
     display: grid;
@@ -211,8 +222,9 @@ a:hover:not(.active) {
     display: grid;
     grid-area: kanban;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 0.1fr;
+    grid-template-rows: 0.1fr 1fr 0.1fr;
     grid-template-areas: 
+    "kanban-top-container"
     "kanban-column-wrapper" 
     "kanban-add";
   }
@@ -235,6 +247,6 @@ a:hover:not(.active) {
     grid-template-rows: 1fr;
     grid-template-columns: 0.1fr 1fr;
     grid-template-areas: 
-      "studbud ."; 
+      "studbud stopwatch"; 
   }
 }
