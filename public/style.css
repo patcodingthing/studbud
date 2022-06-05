@@ -105,6 +105,21 @@ a:hover:not(.active) {
 
 }
 
+.kanban-title{
+  resize: none;
+  max-width: 90%;
+  font-size: 25px;
+  background-color: gray;
+  border: none;
+  margin: 5px;
+  border-radius: 10px;
+  font-family: calibri;
+}
+
+.new-column-title{
+  font-family: calibri;
+}
+
 .kanban-add{
   background-color: red;
   grid-area: kanban-add;
@@ -120,24 +135,48 @@ a:hover:not(.active) {
   cursor: pointer;
 }
 
+.add-tile-button{
+  background-color: red;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+  width: 90%;
+  height: 10%;
+}
+
+.add-tile-button:hover{
+  background-color: rgb(141, 0, 0);
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+  width: 90%;
+  height: 10%;
+}
+
+.stopwatch{
+
+}
+
 .reading-list{
-  background-color: green;
+  background-color: lightgray;
   grid-area: reading-list;
   margin: 10px;
   padding: 10px;
   border-color: black;
   border-style: solid;
   border-width: 5px;
+  border-radius: 10px;
 }
 
 .task-list{
-  background-color: orange;
+  background-color: lightgrey;
   grid-area: task-list;
   margin: 10px;
   padding: 10px;
   border-color: black;
   border-style: solid;
   border-width: 5px;
+  border-radius: 10px;
 }
 
 

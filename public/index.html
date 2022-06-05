@@ -9,25 +9,31 @@
   </head>
 
   <body>
-  
+    <!--Wrapper for grid layout-->
     <div class = "main-container">
       
       <header>
         <div class = "studbud"><h1>StudBud</h1></div>
-
+        
+        <!--Stopwatch HTML-->
         <div class = "stopwatch">
+          <div id = "time" class = "time">00:00:00</div>
           <button id = "start">Start</button>
           <button id = "stop">Stop</button>
           <button id = "reset">Reset</button>
         </div>
       </header>
-    
+      
+      <!--Wrapper for grid layout of content: kanban board, reading/task lists-->
       <div class = "content">
 
+        <!--kanban board wrapper-->
         <div id = "kanban" class = "kanban">
-        
+
+            <!--Wrapper for Kanban board categories/columns-->
             <div id = "kanban-column-wrapper" class = "kanban-column-wrapper"></div>
             
+            <!--Button to add new empty Kanban Board column-->
             <button id ="colAdd" class = "kanban-add">
               <h1>+</h1>
               <br>
@@ -36,46 +42,49 @@
 
         </div>
       
-          <div class = "reading-list">
-            <form id="readform">
-              <label for="read">Title:</label>
-              <input type="text" name="read" id="readInput">
+        <!--Reading List HTML-->
+        <div class = "reading-list">
+          <form id="readform">
+            <label for="read">Title:</label>
+            <input type="text" name="read" id="title">
         
-              <br>
+            <br>
             <!--Link input -->
-              <label for="link">Link</label>
-              <input type="text" name="link" id="linkInput">
-              <br>
+            <label for="link">Link</label>
+            <input type="text" name="link" id="link">
+            <br>
             
-              <button type="submit">Submit</button>
-            </form>
-            <ul id="tasklist">
-            </ul>
-            <script src="solution.js"></script>
-            <!-- Swap the scripts to see the working solution -->
-            <!-- <script src="solution.js"></script> -->
-          </div>
-          <div class = "task-list">
-            <form id="taskform">
-              <label for="task">Task:</label>
-              <input type="text" name="task" id="taskInput">
+            <button id = "readsubmit" type="submit">Submit</button>
+          </form>
+
+          <ul id = "readlist"></ul>
+
+        </div>
+         
+        <!--Task List HTML-->
+        <div class = "task-list">
+          <form id="taskform">
+            <label for="task">Task:</label>
+            <input type="text" name="task" id="taskInput">
         
-              <br>
+            <br>
+
             <!-- Date input -->
-              <label for="dueDate">Due Date: </label>
-              <input type="date" name="dueDate" id="dueDateInput">
-              <br>
+            <label for="dueDate">Due Date: </label>
+            <input type="date" name="dueDate" id="dueDateInput">
+            <br>
+            
             <!-- Time input -->
             <label for="completionTime">Completion Time: </label>
-              <input type="time" name="completionTime" id="completionTimeInput">
-        
-              <br>
+            <input type="time" name="completionTime" id="completionTimeInput">
+            <br>
         
             <label for="estimatedTime">Estimated completion time (in mins):</label>
             <input type="number" name="estimatedTime" id="estimatedTimeInput">
-            <!-- Priority -->
             <br>
-        
+            
+            <!-- Priority -->
+            
             <label for="priority">Task Priority:</label>
             <select name="prority" id="priorityInput">
               <option value="">Select one</option>
@@ -83,20 +92,16 @@
               <option value="Medium">Medium</option>
               <option value="High">High</option>
             </select>
-        
             <br>
         
-              <button type="submit">Submit</button>
-            </form>
-            <ul id="tasklist">
-            </ul>
-            <script src="solution.js"></script>
-            <!-- Swap the scripts to see the working solution -->
-            <!-- <script src="solution.js"></script> -->
+            <button type="submit">Submit</button>
+          </form>
+            
+          <ul id="tasklist"></ul>
+            
           </div>
-      
+        </div>
       </div>
-    </div>
 
     <script src="script.js"></script>
   </body>
