@@ -1,5 +1,7 @@
 # studbud
 
+NOTE:: uses npm run start rather than npm run dev
+
 During the process of creating my StudBud web app prototype, I decided to interate on my original design. These decisions were made both with consideration to the usability of the site and my own coding ability.
 
 The main change that was made was to combine all functionality (kanban board, stopwatch, reading and task lists) onto a single page. This was to make it easier for users to access all of the functional parts of the web app, and would (theoretically) make it easier for me to code, as I had concerns about my coding ability in producing my original plan. 
